@@ -25,7 +25,7 @@ public abstract class Character implements CharacterInterface{
     }
 
     public String getInfo() {
-        return String.format("Name: %s, class: %s, HP: %d  strength: %s, attack range: %d" , 
+        return String.format("Name: %s, class: %s, HP: %d  strength: %d, attack range: %d" , 
                 this.name,  this.getClass().getSimpleName(), this.health, this.strength, this.attackRange);
     }
 }
