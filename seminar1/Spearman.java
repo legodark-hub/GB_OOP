@@ -11,4 +11,9 @@ public class Spearman extends Character {
         return strength;
 
     }
+
+    @Override
+    public void step() {
+        attack();
+    }
 }

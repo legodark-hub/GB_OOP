@@ -10,4 +10,9 @@ public class Peasant extends Character{
         System.out.println(name + " тычет вилой на " + strength + "урона.");
         return strength;
     }
+
+    @Override
+    public void step() {
+        attack();
+    }
 }

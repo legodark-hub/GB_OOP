@@ -10,4 +10,9 @@ public class Monk extends Character{
         System.out.println(name + " дает мощный пендель на" + strength + "урона.");
         return strength;
     }
+
+    @Override
+    public void step() {
+        attack();
+    }
 }

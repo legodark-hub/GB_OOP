@@ -24,4 +24,15 @@ public class Warlock extends Character{
         mana += 20;
         System.out.println(name + " восстанавливает 20 маны.");
     }
+
+    @Override
+    public void step() {
+        regenerateMana();
+        attack();
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s, mana: %d", super.getInfo(), this.mana);
+    }
 }

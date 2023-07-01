@@ -19,4 +19,18 @@ public class Crossbowman extends Character{
             return 0;
         }
     }
+
+    public void reload() {
+    }
+
+    @Override
+    public void step() {
+        reload();
+        attack();
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s, bolts: %d", super.getInfo(), this.bolts);
+    }
 }
