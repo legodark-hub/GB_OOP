@@ -5,12 +5,14 @@ public abstract class Character implements CharacterInterface{
     protected int health;
     protected int strength;
     protected int attackRange;
+    protected Coordinates coordinates;
 
-    public Character(String name, int health, int strength, int attackRange) {
+    public Character(String name, int health, int strength, int attackRange, int x, int y) {
         this.name = name;
         this.health = health;
         this.strength = strength;
         this.attackRange = attackRange;
+        this.coordinates = new Coordinates(x, y);
     }
 
     public abstract int attack();
