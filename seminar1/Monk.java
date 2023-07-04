@@ -1,8 +1,8 @@
 package GB_OOP.seminar1;
 
 public class Monk extends Character{
-    public Monk(String name) {
-        super(name, 120, 10, 1);
+    public Monk(String name, int x, int y) {
+        super(name, 120, 10, 1, x, y);
     }
 
     @Override

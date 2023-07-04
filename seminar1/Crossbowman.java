@@ -3,8 +3,8 @@ package GB_OOP.seminar1;
 public class Crossbowman extends Character{
     private int bolts;
 
-    public Crossbowman(String name) {
-        super(name, 60, 6, 6);
+    public Crossbowman(String name, int x, int y) {
+        super(name, 60, 6, 6, x, y);
         this.bolts = 20;
     }
 

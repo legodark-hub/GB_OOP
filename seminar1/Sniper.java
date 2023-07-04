@@ -3,8 +3,8 @@ package GB_OOP.seminar1;
 public class Sniper extends Character{
     private int bullets;
 
-    public Sniper(String name) {
-        super(name, 50, 7, 10);
+    public Sniper(String name, int x, int y) {
+        super(name, 50, 7, 10, x, y);
         this.bullets = 5;
     }
 

@@ -3,8 +3,8 @@ package GB_OOP.seminar1;
 public class Warlock extends Character{
     private int mana;
 
-    public Warlock(String name) {
-        super(name, 40, 7, 5);
+    public Warlock(String name, int x, int y) {
+        super(name, 40, 7, 5, x, y);
         this.mana = 100;
     }
 

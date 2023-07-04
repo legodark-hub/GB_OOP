@@ -3,8 +3,8 @@ package GB_OOP.seminar1;
 public class Rogue extends Character{
     private double criticalChance;
 
-    public Rogue(String name) {
-        super(name, 80, 5, 1);
+    public Rogue(String name, int x, int y) {
+        super(name, 80, 5, 1, x, y);
         this.criticalChance = 0.3;
     }
 

@@ -1,8 +1,8 @@
 package GB_OOP.seminar1;
 
 public class Peasant extends Character{
-    public Peasant(String name) {
-        super(name, 100, 3, 1);
+    public Peasant(String name, int x, int y) {
+        super(name, 100, 3, 1, x, y);
     }
 
     @Override
