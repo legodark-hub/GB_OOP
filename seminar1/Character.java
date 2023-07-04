@@ -1,5 +1,7 @@
 package GB_OOP.seminar1;
 
+import java.util.List;
+
 public abstract class Character implements CharacterInterface{
     protected String name;
     protected int health;
@@ -29,5 +31,30 @@ public abstract class Character implements CharacterInterface{
     public String getInfo() {
         return String.format("Name: %s, class: %s, HP: %d  strength: %d, attack range: %d" , 
                 this.name,  this.getClass().getSimpleName(), this.health, this.strength, this.attackRange);
+    }
+
+    public double calculateDistance(Character character) {
+        int xDiff = coordinates.getX() - character.coordinates.getX();
+        int yDiff = coordinates.getY() - character.coordinates.getY();
+        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    }
+
+    public void findNearestEnemy(List<Character> enemies) {
+        Character nearestEnemy = null;
+        double minDistance = Double.MAX_VALUE;
+
+        for (Character enemy : enemies) {
+            double distance = calculateDistance(enemy);
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null) {
+            System.out.println("Ближайший к " + name + " враг - " + nearestEnemy.name + ". Расстояние - " + minDistance);
+        } else {
+            System.out.println(name + " не наблюдает рядом врагов");
+        }
     }
 }
