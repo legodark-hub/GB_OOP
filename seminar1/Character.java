@@ -39,7 +39,7 @@ public abstract class Character implements CharacterInterface{
         return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
     }
 
-    public void findNearestEnemy(List<Character> enemies) {
+    public Character findNearestEnemy(List<Character> enemies) {
         Character nearestEnemy = null;
         double minDistance = Double.MAX_VALUE;
 
@@ -56,5 +56,6 @@ public abstract class Character implements CharacterInterface{
         } else {
             System.out.println(name + " не наблюдает рядом врагов");
         }
+        return nearestEnemy;
     }
 }
