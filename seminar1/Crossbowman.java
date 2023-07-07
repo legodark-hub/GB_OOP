@@ -1,6 +1,8 @@
 package GB_OOP.seminar1;
 
-public class Crossbowman extends Character{
+import java.util.ArrayList;
+
+public class Crossbowman extends Character {
     private int bolts;
 
     public Crossbowman(String name, int x, int y) {
@@ -19,17 +21,29 @@ public class Crossbowman extends Character{
         }
     }
 
-    public void reload() {
-    }
-
     @Override
-    public void step() {
-        reload();
-        attack();
+    public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
+        if (health <= 0 || bolts == 0)
+            return;
+        attack(findNearestEnemy(enemies));
+        if (hasPeasant(allies)) {
+            bolts++;
+            return;
+        }
+        return;
     }
 
     @Override
     public String getInfo() {
         return String.format("%s, bolts: %d", super.getInfo(), this.bolts);
+    }
+
+    public boolean hasPeasant(ArrayList<Character> team) {
+        for (Character ally : team) {
+            if (ally instanceof Peasant) {
+                return true;
+            }
+        }
+        return false;
     }
 }
