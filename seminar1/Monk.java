@@ -6,9 +6,9 @@ public class Monk extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         System.out.println(name + " дает мощный пендель на" + strength + "урона.");
-        return strength;
+        target.takeDamage(strength);
     }
 
     @Override

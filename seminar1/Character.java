@@ -17,7 +17,7 @@ public abstract class Character implements CharacterInterface{
         this.coordinates = new Coordinates(x, y);
     }
 
-    public abstract int attack();
+    public abstract void attack(Character target);
 
     public void takeDamage(int damage) {
         health -= damage;

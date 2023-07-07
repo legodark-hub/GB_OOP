@@ -6,9 +6,9 @@ public class Spearman extends Character {
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         System.out.println(name + " колет копьем на " + strength + "урона.");
-        return strength;
+        target.takeDamage(strength);
 
     }
 

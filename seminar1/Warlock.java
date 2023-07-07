@@ -9,14 +9,13 @@ public class Warlock extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         if (mana >= 10) {
             System.out.println(name + " кастует фаербол на " + strength + "урона.");
             mana -= 10;
-            return strength;
+            target.takeDamage(strength);
         } else {
             System.out.println(name + " без маны");
-            return 0;
         }
     }
 

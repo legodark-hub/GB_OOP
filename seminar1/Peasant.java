@@ -6,9 +6,9 @@ public class Peasant extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         System.out.println(name + " тычет вилой на " + strength + "урона.");
-        return strength;
+        target.takeDamage(strength);
     }
 
     @Override

@@ -9,14 +9,13 @@ public class Crossbowman extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         if (bolts > 0) {
             System.out.println(name + " стреляет с арбалета на " + strength + "урона.");
             bolts--;
-            return strength;
+            target.takeDamage(strength);
         } else {
             System.out.println(name + " без болтов для арбалета.");
-            return 0;
         }
     }
 

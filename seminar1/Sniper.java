@@ -9,14 +9,13 @@ public class Sniper extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         if (bullets > 0) {
             System.out.println(name + " дает хеддшот на " + strength + "урона.");
             bullets--;
-            return strength;
+            target.takeDamage(strength);
         } else {
             System.out.println(name + " без патронов.");
-            return 0;
         }
     }
 

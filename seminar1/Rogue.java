@@ -9,14 +9,14 @@ public class Rogue extends Character{
     }
 
     @Override
-    public int attack() {
+    public void attack(Character target) {
         if (Math.random() < criticalChance) {
             System.out.println(name + " бьет критический удар на " + strength*2 + "урона.");
-            return strength*2;
+            target.takeDamage(strength*2);
         }
         else {
             System.out.println(name + " режет кинжалом на " + strength + "урона.");
-            return strength;
+            target.takeDamage(strength);
         }
     }
 
