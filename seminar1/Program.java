@@ -3,6 +3,9 @@ package GB_OOP.seminar1;
 import java.util.ArrayList;
 import java.util.Random;
 
+import GB_OOP.seminar1.Classes.*;
+import GB_OOP.seminar1.Classes.Character;
+
 public class Program {
     public static void main(String[] args) {
 

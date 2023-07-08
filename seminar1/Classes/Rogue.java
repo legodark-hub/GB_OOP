@@ -1,4 +1,4 @@
-package GB_OOP.seminar1;
+package GB_OOP.seminar1.Classes;
 
 public class Rogue extends Character{
     private double criticalChance;

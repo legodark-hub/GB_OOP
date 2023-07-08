@@ -1,4 +1,4 @@
-package GB_OOP.seminar1;
+package GB_OOP.seminar1.Classes;
 
 public class Monk extends Character{
     public Monk(String name, int x, int y) {

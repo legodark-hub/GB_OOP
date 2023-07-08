@@ -1,4 +1,4 @@
-package GB_OOP.seminar1;
+package GB_OOP.seminar1.Classes;
 
 import java.util.List;
 
