@@ -2,7 +2,7 @@ package GB_OOP.seminar1.Classes;
 
 import java.util.List;
 
-public abstract class Character implements CharacterInterface{
+public abstract class Character implements CharacterInterface {
     protected String name;
     protected int health;
     protected int maxHealth;
@@ -19,6 +19,11 @@ public abstract class Character implements CharacterInterface{
         this.coordinates = new Coordinates(x, y);
     }
 
+    public int[] getCoords() {
+        int[] coords = { coordinates.getX(), coordinates.getY() };
+        return coords;
+    }
+
     public abstract void attack(Character target);
 
     public void takeDamage(int damage) {
@@ -31,8 +36,9 @@ public abstract class Character implements CharacterInterface{
     }
 
     public String getInfo() {
-        return String.format("Name: %s, class: %s, HP: %d  strength: %d, attack range: %d, coordinates - x:%d, y:%d" , 
-                this.name,  this.getClass().getSimpleName(), this.health, this.strength, this.attackRange, this.coordinates.getX(), this.coordinates.getY());
+        return String.format("Name: %s, class: %s, HP: %d  strength: %d, attack range: %d, coordinates - x:%d, y:%d",
+                this.name, this.getClass().getSimpleName(), this.health, this.strength, this.attackRange,
+                this.coordinates.getX(), this.coordinates.getY());
     }
 
     public double calculateDistance(Character character) {
@@ -54,7 +60,8 @@ public abstract class Character implements CharacterInterface{
         }
 
         if (nearestEnemy != null) {
-            System.out.println("Ближайший к " + name + " враг - " + nearestEnemy.name + ". Расстояние - " + minDistance);
+            System.out
+                    .println("Ближайший к " + name + " враг - " + nearestEnemy.name + ". Расстояние - " + minDistance);
         } else {
             System.out.println(name + " не наблюдает рядом врагов");
         }
