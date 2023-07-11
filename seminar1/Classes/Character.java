@@ -24,6 +24,10 @@ public abstract class Character implements CharacterInterface {
         return coords;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
     public abstract void attack(Character target);
 
     public void takeDamage(int damage) {
