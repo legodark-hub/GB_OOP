@@ -2,7 +2,7 @@ package GB_OOP.seminar1.Classes;
 
 import java.util.ArrayList;
 
-public class Warlock extends Character{
+public class Warlock extends Character {
     private int mana;
 
     public Warlock(String name, int x, int y) {
@@ -26,10 +26,19 @@ public class Warlock extends Character{
         System.out.println(name + " восстанавливает 20 маны.");
     }
 
+    public void healAlly(ArrayList<Character> allies) {
+        for (Character ally:allies) {
+            if (ally.health<ally.maxHealth) {
+                ally.health+=10;
+                System.out.println(name + " отхиливает " + ally.name + "на 10 хп");
+            }
+        }
+    }
+
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
-        // regenerateMana();
-        // attack();
+        healAlly(allies);
+        attack(findNearestEnemy(enemies));
     }
 
     @Override
