@@ -5,13 +5,15 @@ import java.util.List;
 public abstract class Character implements CharacterInterface{
     protected String name;
     protected int health;
+    protected int maxHealth;
     protected int strength;
     protected int attackRange;
     protected Coordinates coordinates;
 
     public Character(String name, int health, int strength, int attackRange, int x, int y) {
         this.name = name;
-        this.health = health;
+        this.maxHealth = health;
+        this.health = this.maxHealth;
         this.strength = strength;
         this.attackRange = attackRange;
         this.coordinates = new Coordinates(x, y);
