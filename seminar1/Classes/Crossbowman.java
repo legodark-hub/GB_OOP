@@ -41,7 +41,11 @@ public class Crossbowman extends Character {
     public boolean hasPeasant(ArrayList<Character> team) {
         for (Character ally : team) {
             if (ally instanceof Peasant) {
-                return true;
+                Peasant peasant = (Peasant) ally;
+                if (peasant.health>0 && !peasant.busy) {
+                    peasant.busy = true;
+                    return true;
+                }
             }
         }
         return false;
