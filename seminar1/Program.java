@@ -7,28 +7,25 @@ import GB_OOP.seminar1.Classes.*;
 import GB_OOP.seminar1.Classes.Character;
 
 public class Program {
+    static ArrayList<Character> team1 = new ArrayList<>();
+    static ArrayList<Character> team2 = new ArrayList<>();
+    static ArrayList<Character> allTeam = new ArrayList<>();
+
     public static void main(String[] args) {
 
+        generateTeam(team1, 10, 1);
+        generateTeam(team2, 10, 10);
+
+        allTeam.addAll(team1);
+        allTeam.addAll(team2);
         
-        ArrayList<Character> team1 = new ArrayList<>();
-        ArrayList<Character> team2 = new ArrayList<>();
-
-        generateTeam(team1, 10, 0);
-        generateTeam(team2, 10, 15);
-
-        for (Character unit : team1) {
-            System.out.println(unit.getInfo());
-        }
-
-        for (Character unit : team2) {
-            System.out.println(unit.getInfo());
-        }
+        View.view();
     }
 
     public static void generateTeam(ArrayList<Character> team, int teamSize, int posX) {
         Random random = new Random();
 
-        for (int i = 0; i < teamSize; i++) {
+        for (int i = 1; i <= teamSize; i++) {
             int randomClass = random.nextInt(7); // Генерация случайного числа от 0 до 6
 
             switch (randomClass) {
