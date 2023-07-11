@@ -33,6 +33,6 @@ public class Sniper extends Character{
 
     @Override
     public String getInfo() {
-        return String.format("%s, bullets: %d", super.getInfo(), this.bullets);
+        return String.format("%s B: %d", super.getInfo(), this.bullets);
     }
 }

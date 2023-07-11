@@ -35,7 +35,7 @@ public class Crossbowman extends Character {
 
     @Override
     public String getInfo() {
-        return String.format("%s, bolts: %d", super.getInfo(), this.bolts);
+        return String.format("%s B: %d", super.getInfo(), this.bolts);
     }
 
     public boolean hasPeasant(ArrayList<Character> team) {

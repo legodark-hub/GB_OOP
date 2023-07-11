@@ -43,6 +43,6 @@ public class Warlock extends Character {
 
     @Override
     public String getInfo() {
-        return String.format("%s, mana: %d", super.getInfo(), this.mana);
+        return String.format("%s MP: %d", super.getInfo(), this.mana);
     }
 }

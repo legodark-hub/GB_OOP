@@ -40,8 +40,8 @@ public abstract class Character implements CharacterInterface {
     }
 
     public String getInfo() {
-        return String.format("Name: %s, class: %s, HP: %d  strength: %d, attack range: %d, coordinates - x:%d, y:%d",
-                this.name, this.getClass().getSimpleName(), this.health, this.strength, this.attackRange,
+        return String.format("%s, HP:%d STR:%d AR:%d x:%d y:%d",
+                this.name, this.health, this.strength, this.attackRange,
                 this.coordinates.getX(), this.coordinates.getY());
     }
 
