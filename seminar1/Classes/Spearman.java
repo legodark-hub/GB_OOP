@@ -1,5 +1,7 @@
 package GB_OOP.seminar1.Classes;
 
+import java.util.ArrayList;
+
 public class Spearman extends Character {
     public Spearman(String name, int x, int y) {
         super(name, 130, 5, 2, x, y);
@@ -13,7 +15,7 @@ public class Spearman extends Character {
     }
 
     @Override
-    public void step() {
-        attack();
+    public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
+        //attack();
     }
 }

@@ -1,5 +1,7 @@
 package GB_OOP.seminar1.Classes;
 
+import java.util.ArrayList;
+
 public class Sniper extends Character{
     private int bullets;
 
@@ -24,9 +26,9 @@ public class Sniper extends Character{
     };
 
     @Override
-    public void step() {
-        reload();
-        attack();
+    public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
+        //reload();
+        //attack();
     }
 
     @Override

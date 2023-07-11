@@ -1,5 +1,7 @@
 package GB_OOP.seminar1.Classes;
 
+import java.util.ArrayList;
+
 public class Warlock extends Character{
     private int mana;
 
@@ -25,9 +27,9 @@ public class Warlock extends Character{
     }
 
     @Override
-    public void step() {
-        regenerateMana();
-        attack();
+    public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
+        // regenerateMana();
+        // attack();
     }
 
     @Override
