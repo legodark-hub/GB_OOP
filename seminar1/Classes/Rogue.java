@@ -1,8 +1,6 @@
 package GB_OOP.seminar1.Classes;
 
-import java.util.ArrayList;
-
-public class Rogue extends Character{
+public class Rogue extends Infantry{
     private double criticalChance;
 
     public Rogue(String name, int x, int y) {
@@ -22,8 +20,4 @@ public class Rogue extends Character{
         }
     }
 
-    @Override
-    public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
-        //attack();
-    }
 }
