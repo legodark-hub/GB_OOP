@@ -29,8 +29,8 @@ public class Warlock extends Character {
     public void healAlly(ArrayList<Character> allies) {
         for (Character ally:allies) {
             if (ally.health<ally.maxHealth && ally.health>0) {
-                ally.health+=10;
-                System.out.println(name + " отхиливает " + ally.name + "на 10 хп");
+                ally.health+=3;
+                System.out.println(name + " отхиливает " + ally.name + "на 3 хп");
                 return;
             }
         }
