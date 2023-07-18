@@ -32,7 +32,7 @@ public class Program {
                 System.out.println("Команда 2 выиграла");
                 break;
             }
-            if (isDeadTeam(team1)) {
+            if (isDeadTeam(team2)) {
                 System.out.println("Команда 1 выиграла");
                 break;
             }
