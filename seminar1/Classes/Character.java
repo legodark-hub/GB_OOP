@@ -58,18 +58,18 @@ public abstract class Character implements CharacterInterface {
 
         for (Character enemy : enemies) {
             double distance = calculateDistance(enemy);
-            if (distance < minDistance) {
+            if (distance < minDistance && enemy.health>0) {
                 minDistance = distance;
                 nearestEnemy = enemy;
             }
         }
 
-        if (nearestEnemy != null) {
-            System.out
-                    .println("Ближайший к " + name + " враг - " + nearestEnemy.name + ". Расстояние - " + minDistance);
-        } else {
-            System.out.println(name + " не наблюдает рядом врагов");
-        }
+        // if (nearestEnemy != null) {
+        //     System.out
+        //             .println("Ближайший к " + name + " враг - " + nearestEnemy.name + ". Расстояние - " + minDistance);
+        // } else {
+        //     System.out.println(name + " не наблюдает рядом врагов");
+        // }
         return nearestEnemy;
     }
 
