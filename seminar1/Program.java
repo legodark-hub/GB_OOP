@@ -2,6 +2,7 @@ package GB_OOP.seminar1;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import GB_OOP.seminar1.Classes.*;
 import GB_OOP.seminar1.Classes.Character;
@@ -19,7 +20,15 @@ public class Program {
         allTeam.addAll(team1);
         allTeam.addAll(team2);
         
-        View.view();
+    //     Scanner in = new Scanner(System.in);
+    //     while (true) {
+    //         View.view();
+    //         in.nextLine();
+    //         for (Character character : allTeam) {
+    //             if (team1.contains(character)) character.step(team2, team1);
+    //             else character.step(team1, team2);
+    //         }
+    //     }
     }
 
     public static void generateTeam(ArrayList<Character> team, int teamSize, int posX) {
@@ -54,5 +63,12 @@ public class Program {
                     break;
             }
         }
+    }
+
+    public boolean isDeadTeam(ArrayList<Character> team) {
+        for (Character character : team) {
+            if (character.getHealth() > 0) return false;
+        };
+        return true;
     }
 }
