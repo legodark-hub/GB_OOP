@@ -71,4 +71,9 @@ public abstract class Character implements CharacterInterface {
         }
         return nearestEnemy;
     }
+
+    public boolean isDead(){
+        if (health<=0) return true;
+        return false;
+    }
 }
