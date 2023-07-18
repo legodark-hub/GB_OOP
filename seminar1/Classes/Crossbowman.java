@@ -6,7 +6,7 @@ public class Crossbowman extends Character {
     private int bolts;
 
     public Crossbowman(String name, int x, int y) {
-        super(name, 60, 6, 99, x, y);
+        super(name, 60, 6, 6, x, y);
         this.bolts = 20;
     }
 
@@ -23,9 +23,21 @@ public class Crossbowman extends Character {
 
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
-        if (health <= 0 || bolts == 0)
+        if (isDead() || bolts == 0)
             return;
-        attack(findNearestEnemy(enemies));
+        
+            Character nearestEnemy = findNearestEnemy(enemies);
+
+            if (nearestEnemy == null) return;
+    
+            if (calculateDistance(nearestEnemy) > attackRange) {
+                movement(nearestEnemy, allies);
+            }
+    
+            if (calculateDistance(nearestEnemy) <= attackRange) {
+                attack(nearestEnemy);
+            }
+
         if (hasPeasant(allies)) {
             bolts++;
             return;

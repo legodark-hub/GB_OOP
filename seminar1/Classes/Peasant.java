@@ -18,7 +18,18 @@ public class Peasant extends Character{
 
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
+        if (isDead()) return;
         busy = false;
-        attack(findNearestEnemy(enemies));
+        Character nearestEnemy = findNearestEnemy(enemies);
+
+        if (nearestEnemy == null) return;
+
+        if (calculateDistance(nearestEnemy) > attackRange) {
+            movement(nearestEnemy, allies);
+        }
+
+        if (calculateDistance(nearestEnemy) <= attackRange) {
+            attack(nearestEnemy);
+        }
     }
 }

@@ -6,7 +6,7 @@ public class Sniper extends Character{
     private int bullets;
 
     public Sniper(String name, int x, int y) {
-        super(name, 50, 7, 99, x, y);
+        super(name, 50, 7, 10, x, y);
         this.bullets = 5;
     }
 
@@ -22,13 +22,27 @@ public class Sniper extends Character{
     }
 
     public void reload(){
-
+        bullets+=5;
     };
 
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
-        //reload();
-        //attack();
+        if (isDead()) return;
+        if (bullets>0) {
+            Character nearestEnemy = findNearestEnemy(enemies);
+
+        if (nearestEnemy == null) return;
+
+        if (calculateDistance(nearestEnemy) > attackRange) {
+            movement(nearestEnemy, allies);
+        }
+
+        if (calculateDistance(nearestEnemy) <= attackRange) {
+            attack(nearestEnemy);
+        }
+        }
+        else reload();
+        return;
     }
 
     @Override

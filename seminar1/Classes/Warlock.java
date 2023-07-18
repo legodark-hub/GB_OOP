@@ -6,7 +6,7 @@ public class Warlock extends Character {
     private int mana;
 
     public Warlock(String name, int x, int y) {
-        super(name, 40, 7, 99, x, y);
+        super(name, 40, 7, 5, x, y);
         this.mana = 100;
     }
 
@@ -38,7 +38,21 @@ public class Warlock extends Character {
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
         healAlly(allies);
-        attack(findNearestEnemy(enemies));
+        if (mana >=10) {
+            Character nearestEnemy = findNearestEnemy(enemies);
+
+        if (nearestEnemy == null) return;
+
+        if (calculateDistance(nearestEnemy) > attackRange) {
+            movement(nearestEnemy, allies);
+        }
+
+        if (calculateDistance(nearestEnemy) <= attackRange) {
+            attack(nearestEnemy);
+        }
+        }
+        else regenerateMana();
+        return;
     }
 
     @Override

@@ -9,42 +9,24 @@ public abstract class Infantry extends Character {
     }
     @Override
     public void step(ArrayList<Character> enemies, ArrayList<Character> allies) {
-        if (health <= 0) {
+        if (isDead()) {
             return;
         }
 
         Character nearestEnemy = findNearestEnemy(enemies);
 
-        if (nearestEnemy != null) {
-            int targetX = nearestEnemy.coordinates.getX();
-            int targetY = nearestEnemy.coordinates.getY();
+        if (nearestEnemy == null) return;
 
-            int diffX = targetX - coordinates.getX();
-            int diffY = targetY - coordinates.getY();
-
-            int newX = coordinates.getX();
-            int newY = coordinates.getY();
-
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                newX = coordinates.getX() + Integer.compare(diffX, 0);
-            } else {
-                newY = coordinates.getY() + Integer.compare(diffY, 0);
-            }
-
-            
-            for (Character character : allies) {
-                if (character != this && character.health > 0 &&
-                        character.coordinates.getX() == newX && character.coordinates.getY() == newY) {
-                    return;  
-                }
-            }
-
-            coordinates = new Coordinates(newX, newY);
+        if (calculateDistance(nearestEnemy) > attackRange) {
+            movement(nearestEnemy, allies);
         }
 
-        if (nearestEnemy != null && calculateDistance(nearestEnemy) <= attackRange) {
+        if (calculateDistance(nearestEnemy) <= attackRange) {
             attack(nearestEnemy);
         }
+
+
+        return;
     }
 
 }
