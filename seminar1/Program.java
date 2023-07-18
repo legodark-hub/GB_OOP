@@ -20,15 +20,23 @@ public class Program {
         allTeam.addAll(team1);
         allTeam.addAll(team2);
         
-    //     Scanner in = new Scanner(System.in);
-    //     while (true) {
-    //         View.view();
-    //         in.nextLine();
-    //         for (Character character : allTeam) {
-    //             if (team1.contains(character)) character.step(team2, team1);
-    //             else character.step(team1, team2);
-    //         }
-    //     }
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            View.view();
+            in.nextLine();
+            for (Character character : allTeam) {
+                if (team1.contains(character)) character.step(team2, team1);
+                else character.step(team1, team2);
+            }
+            if (isDeadTeam(team1)) {
+                System.out.println("Команда 2 выиграла");
+                break;
+            }
+            if (isDeadTeam(team1)) {
+                System.out.println("Команда 1 выиграла");
+                break;
+            }
+        }
     }
 
     public static void generateTeam(ArrayList<Character> team, int teamSize, int posX) {
@@ -65,7 +73,7 @@ public class Program {
         }
     }
 
-    public boolean isDeadTeam(ArrayList<Character> team) {
+    public static boolean isDeadTeam(ArrayList<Character> team) {
         for (Character character : team) {
             if (character.getHealth() > 0) return false;
         };
