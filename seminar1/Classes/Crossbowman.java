@@ -6,7 +6,7 @@ public class Crossbowman extends Character {
     private int bolts;
 
     public Crossbowman(String name, int x, int y) {
-        super(name, 60, 6, 6, x, y);
+        super(name, 60, 6, 99, x, y);
         this.bolts = 20;
     }
 

@@ -6,7 +6,7 @@ public class Sniper extends Character{
     private int bullets;
 
     public Sniper(String name, int x, int y) {
-        super(name, 50, 7, 10, x, y);
+        super(name, 50, 7, 99, x, y);
         this.bullets = 5;
     }
 
